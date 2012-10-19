@@ -1,0 +1,29 @@
+
+<%= link_to("<< add", {:action => 'subtech'}, :class =>'action subtech') %>
+ <% @page_title = "Subject-Teacher new" %>
+
+<div class ="subject-teacher new">
+	<h2>Create Subject-Teacher</h2>
+	
+	<%= form_for(:subject_teacher, :url =>{:action => 'subtech2'}) do |f| %>
+	
+	 <table summary="subject-teacher form fields">
+ 	    
+        <tr>
+			<th><%= f.label(:Teacher) %></th>
+			<td><%= f.select(:tname, @tnames) %></td>
+		</tr>
+	 	<tr>
+	 		<th><%= f.label(:Subject) %></th>
+	 		<td><%= f.select(:sub_name, @subs) %></td>
+	 	</tr>
+	 	
+</table>    
+      										          
+	    <div class="form-buttons">
+		<%= submit_tag("Create SubTeach") %> 
+</div>
+<% end %>
+</div>
+  
+  

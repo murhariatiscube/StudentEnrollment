@@ -1,0 +1,47 @@
+<% @page_title = "Student show" %>
+<% link_to("<< Back to List", {:action => 'list'}, :class =>'back-link') %>
+
+<div class ="Student show">
+	<h2>Show Student</h2>
+	
+	<table summary="Student detail view">
+		<tr>
+			<th>Student ID</th>
+			<td><%= @student.id %></td>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<td><%= @student.year %></td>
+		</tr>
+		<tr>
+			<th>FirstName</th>
+			<td><%= @student.sfname %></td>
+		</tr>
+		<tr>
+			<th>LastName</th>
+			<td><%= @student.slname %></td>
+		</tr>
+		<tr>
+			<th>DOB</th>
+			<td><%= @student.DOB %></td>
+		</tr>
+		<tr>
+			<th>Gender</th>
+			<td><%= @student.gender %></td>
+		</tr>
+		<tr>
+			<th>Moblie</th>
+			<td><%= @student.mob %></td>
+		</tr>
+		<tr>
+			<th>Percentage</th>
+			<td><%= @student.per %></td>
+		</tr>
+		<tr>
+			<th>email</th>
+			<td><%= @student.email %></td>
+		</tr>
+	
+		
+	</table>
+</div>

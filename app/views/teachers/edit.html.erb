@@ -1,0 +1,19 @@
+<% @page_title = "teacher edit" %>
+<%= link_to("<<Back to list",{:action => 'list'}, :class => 'back-link' )%>
+
+<div class="teacher edit">
+	 <h2>update  Teacher</h2>
+	 
+	 <%= form_for(:teacher, :url => {:action => 'update', :id => @teacher.id}) do |f| %>
+	 
+	<%= render(:partial => "PTemplates/teacher_pt", :locals => {:f => f})%>  
+
+	
+       <div class="form button">	
+       	 <%=submit_tag("Update Teacher")%>	
+       </div>	
+    <%end%>
+    
+</div>        				
+	 		
+	 			

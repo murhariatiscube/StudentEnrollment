@@ -1,0 +1,21 @@
+<!= This is Partial template & name of template always start with _ >
+
+
+ <table summary="Lesson form fields">
+		<tr>
+			<th>Subject Name</th>
+			<td><%= @subject.sub_name %></td>
+		</tr>
+		<tr>
+			<th>Lesson No</th>
+			<td><%= f.select(:no, 1..@lesson_count) %></td>
+		</tr>
+		<tr>
+			<th>Lesson Name</th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= f.text_area(:content, :rows=>15, :cols=>25) %></td>
+		</tr>
+	</table>

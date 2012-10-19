@@ -1,0 +1,18 @@
+<% @page_title = "Class edit" %>
+<%= link_to("<<Back to list",{:action => 'list'}, :class => 'back-link' )%>
+
+<div class="sclass edit">
+	 <h2>update  Sclass</h2>
+	 
+	 <%= form_for(:sclass, :url => {:action => 'update', :year => @sclass.year}) do |f| %>
+	 
+	<%= render(:partial => "PTemplates/sclass_pt", :locals => {:f => f})%>  
+	
+       <div class="form button">	
+       	 <%=submit_tag("Update Class")%>	
+       </div>	
+    <%end%>
+    
+</div>        				
+	 		
+	 			

@@ -1,0 +1,15 @@
+<% @clerk_title = "Clerk new" %>
+
+<%= link_to("<< Back to List", {:action => 'list'}, :class =>'back-link') %>
+<div class ="clerk new">
+	<h2>Create Clerk</h2>
+	
+	<%= form_for(:clerk, :url =>{:action => 'create'}) do |f| %>
+	
+	<%= render(:partial => "PTemplates/clerk_pt", :locals => {:f => f})%> 
+	<div class="form-buttons">
+		<%= submit_tag("Create Clerk") %> 
+</div>
+
+<% end %>
+</div>

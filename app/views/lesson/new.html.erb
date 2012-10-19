@@ -1,0 +1,16 @@
+<% @lesson_title = "Lesson new" %>
+<%= link_to("<< Back to List", {:controller=>"lesson", :action => 'list', :subject_id => @subject.id}, :class =>'back-link') %>
+<div class ="lesson new">
+	<h2>Create Lesson</h2>
+	
+	<%= form_for(:lesson, :url =>{:action => 'create', :subject_id => @subject.id}) do |f| %>
+	
+	
+    
+	<%= render(:partial => "PTemplates/lesson_pt", :locals => {:f => f})%> 
+	<div class="form-buttons">
+		<%= submit_tag("Create Lesson") %> 
+</div>
+
+<% end %>
+</div>

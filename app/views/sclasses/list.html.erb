@@ -1,0 +1,30 @@
+<% @page_title = "Class list" %>
+
+<div class ="sclass list">
+  <h2> Class </h2>
+
+	<%= link_to("<< Add new Class", {:action => 'new'}, :class =>'action new') %>
+				<%= link_to "Home", :controller => :Clerks, :action => :list%>    
+	            <%= link_to "Subject", :controller => :Subjects, :action => :list%>  
+				<%= link_to "Student", :controller => :Students, :action => :list%> 		
+	     		<%= link_to "Teacher", :controller => :Teachers, :action => :list%>  
+    <table class"listing" summary="Sclass list">
+           <tr class ="header">
+        	<th>Year</th>	  	
+          </tr>
+          
+	  <% @sclass.each do |sclass| %>
+	  <tr>
+		
+		<td><%= sclass.year %></td>
+		
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :year =>sclass.year}, :class =>'action show')%>
+			<%= link_to("Edit",{:action => 'edit', :year =>sclass.year}, :class =>'action edit')%>
+			<%= link_to("Delete",{:action => 'delete', :year =>sclass.year}, :class =>'action delete')%>
+		</td>
+		
+		</tr>
+	<% end %>
+    	</table>
+			</div>

@@ -1,0 +1,18 @@
+<% @lesson_title = "Lesson edit" %>
+<%= link_to("<< Back to List", {:action => 'list', :subject_id => @subject.id}, :class =>'back-link') %>
+
+<div class ="lesson edit">
+	<h2>Update Lesson</h2>
+	
+	<%= form_for(:lesson, :url =>{:action => 'update', :id => @lesson.id, :subject_id => @subject.id}) do |f| %>
+	
+	<%= render(:partial => "PTemplates/lesson_pt", :locals => {:f => f})%> 
+	<!= # to call partial template. form = name of template or path if diff loctn,
+															           #f = name of Alis name >
+		
+	<div class="form_buttons">
+		<%= submit_tag("Update Lesson") %> 
+</div>
+
+<% end %>
+</div>

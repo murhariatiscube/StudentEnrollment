@@ -1,0 +1,18 @@
+<% @page_title = "Class delete" %>
+<%link_to("<< Back to List", {:action => 'list'}, :class =>'back-link') %>
+
+<div class ="sclass delete">
+	<h2>Delete Sclass</h2>
+	
+	<%= form_for(:sclass, :url =>{:action => 'destroy', :year => @sclass.year }) do |f| %>
+	
+	<p> are you sure to delete this record ? </p>
+	
+	<p class ="reference-name"><%= @sclass.year %> </p>
+	
+	<div class="form-buttons">
+		<%= submit_tag("Delete Class") %> 
+</div>
+
+<% end %>
+</div>

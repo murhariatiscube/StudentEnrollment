@@ -1,0 +1,43 @@
+<% @page_title = "Lesson list" %>
+
+#<% if !flash[:notice].blank? %>
+#<div class="notice" >
+#<%= flash[:notice] %>
+#</div>
+#<% end %>
+
+<div class ="Lesson list">
+  <h2> Lesson </h2>
+    <%= link_to("<< Back to Subjects list", {:controller =>'subjects/list'}, :class =>'back-link') %> 
+	<%= link_to("<< Add new Lesson", {:action => 'new', :subject_id => @subject.id}, :class =>'action new') %>
+    <table class"listing" summary="Lesson list">
+       
+    	 <tr class ="header">
+		    
+			<th>Subject Name/th>
+			 
+    	 	<th>Lesson No</th>
+			
+    	 	<th>Lesson Name</th>   
+    	 	
+    	 	<th>Content</th>
+	  		     
+     </tr>
+         
+	   <% @lesson.each do |lesson| %>
+	  </tr>
+	    <td><%= lesson.subject_id %></td>
+	    <td><%= lesson.no %></td>    
+	    <td><%= lesson.name %></td>
+		<td><%= lesson.content %></td>
+		
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :id =>lesson.id, :subject_id => @subject.id}, :class =>'action show')%>
+			<%= link_to("Edit",{:action => 'edit', :id =>lesson.id, :subject_id => @subject.id}, :class =>'action edit')%>
+			<%= link_to("Delete",{:action => 'delete', :id =>lesson.id, :subject_id => @subject.id}, :class =>'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+
+    	</table>
+			</div>

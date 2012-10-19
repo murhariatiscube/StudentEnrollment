@@ -1,0 +1,27 @@
+ <% @page_title = "Class-Teacher new" %>
+
+<div class ="class-teacher new">
+	<h2>Create Class-Teacher</h2>
+	
+	<%= form_for(:class_teacher, :url =>{:action => 'classtech'}) do |f| %>
+	
+	 <table summary="class-teacher form fields">
+ 	    
+        <tr>
+			<th><%= f.label(:teacher_id) %></th>
+			<td><%= f.select(:teacher_id, @tnames) %></td>
+		</tr>
+	 	<tr>
+	 		<th><%= f.label(:Class) %></th>
+	 		<td><%= f.select(:year, @cls) %></td>
+	 	</tr>
+	 	
+</table>    
+      										          
+	    <div class="form-buttons">
+		<%= submit_tag("Create SubTeach") %> 
+</div>
+<% end %>
+</div>
+  
+  

@@ -1,0 +1,41 @@
+<% @page_title = "Teacher list" %>
+
+<div class ="teacher list">
+  <h2> Teachers </h2>
+
+	<%= link_to("<< Add new Teacher", {:action => 'new'}, :class =>'action new') %>
+				<%= link_to "Home", :controller => :Clerks, :action => :list%>  
+				<%= link_to "Class", :controller => :Sclasses, :action => :list%>    
+	            <%= link_to "Subject", :controller => :Subjects, :action => :list%>  
+				<%= link_to "Student", :controller => :Students, :action => :list%> 		
+	     		
+    <table class"listing" summary="Teacher list">
+           <tr class ="header">
+        	<th>Teacher ID</th>
+	  		
+	  		<th>Name</th>
+	  		
+	  		<th>Moblie</th>
+	  		
+	        <th>email</th>
+	        	        
+	        
+          </tr>
+          
+	  <% @teachers.each do |teacher| %>
+	  <tr>
+		
+		<td><%= teacher.id %></td>
+		<td><%= teacher.tname %></td>
+		<td><%= teacher.mob %></td>
+		<td><%= teacher.email %></td>
+		
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :id =>teacher.id}, :class =>'action show')%>
+			<%= link_to("Edit",{:action => 'edit', :id =>teacher.id}, :class =>'action edit')%>
+			<%= link_to("Delete",{:action => 'delete', :id =>teacher.id}, :class =>'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+    	</table>
+			</div>

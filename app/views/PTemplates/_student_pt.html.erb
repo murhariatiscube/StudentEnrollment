@@ -1,0 +1,41 @@
+
+ <table summary="student form fields">
+		
+		<tr>
+			<th>Year</th>
+			<td><%= f.select(:year, @year_list) %></td>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td><%= f.text_field(:sfname) %></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><%= f.text_field(:slname) %></td>
+		</tr>
+		<tr>
+			<th>DOB</th>
+			<td><%= f.datetime_select(:DOB) %></td>
+		</tr>
+		<tr>
+			<th>Gender</th>
+			<td>
+			<%= f.radio_button(:gender, "Male") %> Male
+			<%= f.radio_button(:gender, "Female") %> Female
+			</td>
+		</tr>
+		<tr>
+			<th>Moblie</th>
+			<td><%= f.text_field(:mob) %></td>
+		</tr>
+		<tr>
+			<th>Percentage</th>
+			<td><%= f.text_field(:per) %></td>
+		</tr>
+		<tr>
+			<th>email</th>
+			<td><%= f.text_field(:email) %></td>
+		</tr>
+		
+				
+	</table>

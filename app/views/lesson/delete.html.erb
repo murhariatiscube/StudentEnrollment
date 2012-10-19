@@ -1,0 +1,19 @@
+<% @lesson_title = "Lesson delete" %>
+
+<%link_to("<< Back to List", {:action => 'list', :subject_id => @subject.id}, :class =>'back-link') %>
+
+<div class ="lesson delete">
+	<h2>Delete Lesson</h2>
+	
+	<%= form_for(:lesson, :url =>{:action => 'destroy', :id => @lesson.id, :subject_id => @subject.id }) do |f| %>
+	
+	<p> are you sure to delete this record ? </p>
+	
+	<p class ="reference-name"><%= @lesson.name %> </p>
+	
+	<div class="form-buttons">
+		<%= submit_tag("Delete Lesson") %> 
+</div>
+
+<% end %>
+</div>

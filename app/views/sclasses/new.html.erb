@@ -1,0 +1,16 @@
+<% @page_title = "Class new" %>
+<%link_to("<< Back to List", {:action => 'list'}, :class =>'back-link') %>
+
+<div class ="sclass new">
+	<h2>Create Sclass</h2>
+	
+	<%= form_for(:sclass, :url =>{:action => 'create'}) do |f| %>
+	
+	 <%= render(:partial => "PTemplates/sclass_pt", :locals => {:f => f})%>  
+      										          
+	    <div class="form-buttons">
+		<%= submit_tag("Create Class") %> 
+</div>
+
+<% end %>
+</div>

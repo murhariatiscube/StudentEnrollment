@@ -1,0 +1,22 @@
+<% @page_title = "Sclass show" %>
+
+<% link_to("<< Back to List", {:action => 'list'}, :class =>'back-link') %>
+
+<div class ="sclass show">
+	<h2>Show Sclass</h2>
+	
+	<table summary="Sclass detail view">
+		<tr>
+			<th>Year</th>
+			<td><%= @sclass.year %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @sclass.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @sclass.updated_at %></td>
+		</tr>
+	</table>
+</div>

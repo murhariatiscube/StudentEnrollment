@@ -1,0 +1,48 @@
+<% @page_title = "Clerk list" %>
+
+<div class ="clerk list">
+	<h2> Clerk </h2>
+	
+				<%= link_to "Class", :controller => :Sclasses, :action => :list%>    
+	            <%= link_to "Subject", :controller => :Subjects, :action => :list%>  
+				<%= link_to "Student", :controller => :Students, :action => :list%> 		
+	     		<%= link_to "Teacher", :controller => :Teachers, :action => :list%>  
+<table class"listing" summary="Clerk list">
+           <tr class ="header">
+        	
+           	<th>Clerk id</th>
+           	<th>&nbsp;</th>
+		  	<th>Name</th>
+		  	<th>&nbsp;</th>
+			<th>Username</th>
+		  	<th>&nbsp;</th>
+	  		<th>Mobile</th>
+	  		<th>&nbsp;</th>
+	  		<th>e-mail</th>
+	  		
+          </tr>
+          
+           <% @clerks.each do |clerk| %>
+      	  <tr>
+				<td><%= clerk.id %></td>
+					<th>&nbsp;</th>
+				<td><%= clerk.name %></td>
+					<th>&nbsp;</th>
+					<td><%= clerk.username %></td>
+					<th>&nbsp;</th>
+				<td><%= clerk.mob %></td>
+					<th>&nbsp;</th>
+				<td><%= clerk.email%></td>
+					<th>&nbsp;</th>
+				<td class="action">
+					<%= link_to("show",{:action => 'show', :id =>clerk.id}, :class =>'action show')%>
+					<%= link_to("Edit",{:action => 'edit', :id =>clerk.id}, :class =>'action edit')%>
+					<%= link_to("Delete",{:action => 'delete', :id =>clerk.id}, :class =>'action delete')%>
+				</td>
+		</tr>
+	      <% end %>
+	     		
+					
+</table>
+</div> 
+          

@@ -1,0 +1,58 @@
+<% @page_title = "Student list" %>
+
+<div class ="student list">
+  <h2> Students </h2>
+
+	<%= link_to("<< Add new Student", {:action => 'new'}, :class =>'action new') %>
+			    <%= link_to "Home", :controller => :Clerks, :action => :list%>  
+				<%= link_to "Class", :controller => :Sclasses, :action => :list%>    
+	            <%= link_to "Subject", :controller => :Subjects, :action => :list%>  
+	     		<%= link_to "Teacher", :controller => :Teachers, :action => :list%>  
+    <table class"listing" summary="Student list">
+       
+    	 <tr class ="header">
+    	 	<th>Student ID</th>
+    	 	<th>&nbsp;</th>
+        	<th>Year</th>
+    	 	<th>&nbsp;</th>
+    	 	<th>First Name</th>
+	  		<th>&nbsp;</th>
+		  	<th>Last Name</th>
+		  	<th>&nbsp;</th>
+    	 	<th>DOB</th>
+	  		<th>&nbsp;</th>
+    	 	<th>Gender</th>
+    	 	<th>&nbsp;</th>
+	  		<th>Moblie</th>
+	  		<th>&nbsp;</th>
+	        <th>Percentage</th>
+	        <th>&nbsp;</th>
+	        <th>email</th>
+	        
+	        
+	     
+	     
+     </tr>
+                   
+	   <% @student.each do |student| %>
+	  </tr>
+	    <td><%= student.id %></td><th>&nbsp;</th>
+	    <td><%= student.year %></td><th>&nbsp;</th>
+		<td><%= student.sfname %></td><th>&nbsp;</th>
+		<td><%= student.slname %></td><th>&nbsp;</th>
+		<td><%= student.DOB %></td><th>&nbsp;</th>
+		<td><%= student.gender %></td><th>&nbsp;</th>
+		<td><%= student.mob %></td><th>&nbsp;</th>
+		<td><%= student.per %></td><th>&nbsp;</th>
+		<td><%= student.email %></td><th>&nbsp;</th>
+		
+			
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :id =>student.id}, :class =>'action show')%>
+			<%= link_to("Edit",{:action => 'edit', :id =>student.id}, :class =>'action edit')%>
+			<%= link_to("Delete",{:action => 'delete', :id =>student.id}, :class =>'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+    	</table>
+			</div>

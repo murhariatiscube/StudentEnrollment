@@ -1,0 +1,17 @@
+
+<% @page_title = 'Clerk Area Login' -%>
+
+<div id="login">
+
+<%= form_for(:clerk, :url => {:action => 'send_login'}) do -%>
+
+<div id ="box2s" float="right">
+	<p> <b id = "txt1"> Username:</b>  <%= text_field_tag('username', params[:username], :id => "username") %></p>
+
+	<p><b id="txt2">Password:   </b><%= password_field_tag('password', :id=>"password") %></p>
+
+	<%= submit_tag("Log in") %>
+</div>
+<%= link_to("sign up", {:controller=>"clerks", :action => 'new'}) %>
+</div>
+<% end -%>
